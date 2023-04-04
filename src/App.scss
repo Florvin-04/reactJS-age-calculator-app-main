@@ -1,0 +1,18 @@
+@use "./styles/variables.scss" as *;
+
+.App {
+  background-color: hsl(var(--Neutral-200));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  main {
+    // background-color: ;
+    border-radius: 1rem;
+    border-bottom-right-radius: rem(100);
+    background-color: hsl(var(--Neutral-100));
+    width: min(80%, rem(500));
+    margin-inline: auto;
+  }
+}

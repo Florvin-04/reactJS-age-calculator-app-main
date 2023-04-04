@@ -1,0 +1,34 @@
+@use "sass:math";
+
+:root {
+  //
+  --Primary-100: 259 100% 65%;
+  --Primary-200: 0 100% 67%;
+
+  --Neutral-100: 0 0% 100%;
+  --Neutral-200: 0 0% 94%;
+  --Neutral-300: 0 0% 86%;
+  --Neutral-400: 0 1% 44%;
+  --Neutral-500: 0 0% 8%;
+
+  --fs-100: 2rem;
+}
+
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function rem($pixels, $context: 16) {
+  @return (math.div($pixels, $context)) * 1rem;
+}
+
+// mobile first
+// 650px, 1024px, 1400px
+$breakpoints-up: (
+  "medium": "40.625em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
